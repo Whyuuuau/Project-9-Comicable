@@ -16,14 +16,16 @@
     <link rel="manifest" href="/public/img/favicon/site.webmanifest">
     <link rel="mask-icon" href="/public/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
+    <meta name="theme-color" content="#ffffff">    
 </head>
 <body>
-    <nav class="topnav" id="myTopnav">
+    <!-- <nav class="topnav" id="myTopnav">
         <ul>
             <div class="kiri">
-                <li><a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a>
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="bar()"> 
+                        <i class="fa fa-bars"></i>
+                    </a>
                 </li>
                 <li><a href="/index.html" ><img class="logo" src="/public/img/BACA KOMIK ICON.png" alt=""></a></li>
                 <li><a class="respon"href="/index.html" class="active">BERANDA</a> </li>
@@ -31,7 +33,10 @@
                 <li><a class="respon" href="/web/terbaru.html">TERBARU</a></li>
             </div>
             <div class="kanan">
-                    <li><a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a>
+                    <li>
+                        <a href="javascript:void(0);" class="icon" onclick="find()">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
                     </li>
                     <li> <input class="respon" type="text" name="search" id="search" placeholder="Cari"> </li>
                     <ul class="list-group" id="result"></ul>
@@ -44,10 +49,11 @@
                 <a class="respon" href="/web/terbaru.html">TERBARU</a>
             </div>
             <div id="find" style="display:none"  class="bar">
-                <input class="respon" type="text" placeholder="    Cari">
+                <input class="respon" type="text" placeholder="Cari">
             </div>
         </ul>
-    </nav>
+    </nav> -->
+    <my-navbar></my-navbar>
 
         <!-- KONTEN -->
 
@@ -347,8 +353,9 @@
       <p></p>
     </div>
     <script src="/public/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/public/js/layout/navbar.js"></script>
     <script src="/public/js/loading.js"></script>
-    <script src="/public/js/navbar.js"></script>
+    <!-- <script src="/public/js/navbar.js"></script> -->
     <script src="/public/js/slider.js"></script>
     <script src="/public/js/lebihBanyak.js"></script>
     <script src="/public/js/keyboard_detect.js"></script>

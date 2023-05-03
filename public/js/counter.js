@@ -13,6 +13,6 @@ function animateValue(id, start, end, duration) {
     }, stepTime);
 }
 
-    animateValue("counter", 0, 10800, 1000);
-    animateValue("counter1", 0, 4060, 1000);
-    animateValue("counter2", 0, 7145, 1000);
+animateValue("counter", 0, 10800, 1000);
+animateValue("counter1", 0, 4060, 1000);
+animateValue("counter2", 0, 7145, 1000);

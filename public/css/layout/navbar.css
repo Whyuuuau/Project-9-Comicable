@@ -1,5 +1,5 @@
 /* navbar  */
-nav{
+nav {
     margin: 0px;
     top: 0;
     position: fixed;
@@ -40,7 +40,12 @@ nav ul li a img.logo{
       float:left;
       width: 70px;
       margin-top: -20px;
-    }
+}
+
+.kanan {
+    float: right;
+}
+
 nav .kanan >  a{
   text-decoration: none;
     color: #fff;
@@ -79,7 +84,7 @@ nav li input, nav #find input{
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('../img/searchIcon.png');
+    background-image: url('/public/img/searchIcon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -126,4 +131,35 @@ nav #find input{
 }
 .kanan > ul > li a{
   cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    .topnav li .respon{display: none;}
+    .topnav a.icon {
+        float: left;
+        display: block;
+        padding-right: 30px;
+        padding-left:  0px;
+    }
+    #find input{
+        background-color: var(--bg-color);
+        color: var(--font-color);
+    }
+}
+/* interaksi bar  */
+div.bar {
+    text-align: center;
+    transition: height 3s ease-out;
+}
+div.bar a{
+    padding:4px 0;
+    display: block;
+    color: #595959;
+    text-decoration: none;
+    font-weight: bold;
+}
+@media screen and (min-width: 920px){
+    div#find input, div#bar a{
+        display: none;
+    }
 }
