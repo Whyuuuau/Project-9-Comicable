@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/masuk_daftar.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/masuk_daftar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>BACA KOMIK</title>
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/public/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/public/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -49,49 +48,35 @@
             </ul>
         </nav>
 
-<!-- modal -->
-<div class="content2" >
-  <div class="header2">
-    <!-- <p>Data Tersimpan</p> -->
-    <label for="click" class="fas fa-times" onclick="closemasuk();"></label>
-  </div>
-  <label id="kedua" for="click" class="fas fa-times" ></label>
-  <p> input masih ada yang kosong nih, masukan dulu ya.</p>
-  <div class="line"></div>
-  <label for="click" class="close-btn2" onclick="closemasuk();">Close</label>
-</div>
-
 <!-- conten -->
-
-
-    <div class="konten masuk">
+    <div class="konten">
       <form action="">
-        <h1>MASUK</h1>
-        <input  type="email" name="email" id="myemail" placeholder="Email"><br>
-        <input  type="password" name="password" id="mypass" placeholder="Kata sandi"><br>
-        <button type="">Masuk</button> <br>
-        <a href="daftar1.html"><u>Belum punya akun?</u></a>
+        <h1>DAFTAR</h1> <br>
+        <input onkeyup="validasi();" type="email" placeholder="Masukkan email anda..." id="mymail"><br>
+        <p style="display:none;color:red;" id="email">*masukan email</p>
+        <button type="button" name="button" onclick="lanjut();">Lanjutkan</button>
       </form>
     </div>
 
-<!-- footer -->
-  <footer>
-      <div>
-          <a href="tentangKami.html">Tentang Kami</a>
-          <a href="ketentuanLayanan.html">Ketentuan Layanan</a>
-          <a href="dukunganPelanggan.html">Dukungan Pelanggan</a>
-      </div>
-      <div>
-          <p>© 2019</p>
-      </div>
-  </footer>
-  <div id="loading">
-    <p></p>
-  </div>
+    <!-- footer -->
+    <footer>
+        <div>
+            <a href="tentangKami.html">Tentang Kami</a>
+            <a href="ketentuanLayanan.html">Ketentuan Layanan</a>
+            <a href="dukunganPelanggan.html">Dukungan Pelanggan</a>
+        </div>
+        <div>
+            <p>© 2019</p>
+        </div>
+    </footer>
 
-  <script src="js/jquery/jquery-3.4.1.min.js"></script>
-  <script src="js/loading.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js\validasi_masuk.js"></script>
-</body>
+    <div id="loading">
+      <p></p>
+    </div>
+
+    <script src="/public/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/public/js/loading.js"></script>
+    <script src="/public/js/validsai_daftar1.js"></script>
+    <script src="/public/js/navbar.js"></script>
+  </body>
 </html>

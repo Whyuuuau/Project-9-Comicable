@@ -4,6 +4,7 @@
     --secondary-color: #000000;
     --font-color: #424242;
     --bg-color: #fff;
+    --theme-color: #FFD54F;
     --heading-color: #292922;
     --bg-img: url("../img/background.png");
     --judul:#000000;
@@ -96,18 +97,19 @@ nav ul li {
     float: left;
 }
 nav ul {
-  z-index: 2;
+    z-index: 2;
     list-style-type: none;
     margin:0;
     overflow: hidden;
     padding:0 40px;
     background-color: var(--bg-color);
     box-shadow: 0 4px 7px rgba(0,0,0,0.5);
-  }
+    background-color: #FFD54F;
+}
 nav li input{
   width: 30%;
   margin:15px 10px;
-  }
+}
 nav li a {
     display: block;
     color: #595959;
@@ -178,9 +180,6 @@ nav li input, nav #find input{
 nav #find input{
   margin-bottom: 10px;
 }
-
-
-
 
 .kanan > ul > li > a{
   text-align: left;
