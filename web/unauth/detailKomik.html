@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/detail.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BACA KOMIK</title>
 <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/public/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/public/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -22,73 +22,57 @@
     <nav class="topnav" id="myTopnav">
         <ul>
             <div class="kiri">
-                <li><a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a></li>
-                <li><a href="index-masuk.html" ><img class="logo" src="img/BACA KOMIK ICON.png" alt=""></a></li>
-                <li><a class="respon"href="index-masuk.html" class="active">BERANDA</a> </li>
-                <li><a class="respon"href="semua-masuk.html">SEMUA KOMIK</a> </li>
-                <li><a class="respon" href="terbaru.html">TERBARU</a></li>
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="bar()"> 
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+                <li><a href="/web/unauth/index.html" ><img class="logo" src="/public/img/BACA KOMIK ICON.png" alt=""></a></li>
+                <li><a class="respon"href="/web/unauth/index.html" class="active">BERANDA</a> </li>
+                <li><a class="respon"href="/web/unauth/semuaKomik.html">SEMUA KOMIK</a> </li>
+                <li><a class="respon" href="/web/unauth/terbaru.html">TERBARU</a></li>
             </div>
             <div class="kanan">
-                <li><a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a></li>
-                <i  style="margin-top:10px; color:#2095F2;" class="fa fa-user-circle fa-3x" aria-hidden="true" onclick="drop();"></i>
-                <i class="fa fa-caret-down" aria-hidden="true" style="color:#2095F2;" ></i>
-                <li> <input class="respon" type="text" placeholder="   Cari"> </li>
-
-                <ul id="dropdown"style="display:none">
-                    <li ><a href="" class="biru size18">akun@gmail.com</a></li> <br>
-                    <li onclick="verif();"><a class="hijau size14" href="javascript:void(0);">Belum terverifikasi</a></li> <br>
-                    <li class="garis" onclick="uang();"><a class="size14"  href="javascript:void(0);">Rp. 1,000,000 <i class="fa fa-plus-square" aria-hidden="true"></i></a></li><br>
-                    <li><a href="" style="color:black; cursor:default;">komik</a></li> <br>
-                    <li><a class="abu"href="komikSaya.html">komik saya</a></li> <br>
-                    <li><a class="abu"href="komikTerbeli.html">koleksi terbeli</a></li> <br>
-                    <li class="garis" onclick="tambahKomik();"><a href="javascript:void(0);" class="abu"  >tambah komik</a></li> <br>
-                    <li class="garis" onclick="profil();"><a href="javascript:void(0);">Edit Profil</a></li> <br>
-                    <li onclick="keluarAkun();"><a class="merah"href="javascript:void(0);">Logout</a></li>
-                </ul>
+                    <li>
+                        <a href="javascript:void(0);" class="icon" onclick="find()">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li> <input class="respon" type="text" name="search" id="search" placeholder="Cari"> </li>
+                    <ul class="list-group" id="result"></ul>
+                    <a  href="/web/unauth/login.html">Masuk</a>
             </div>
             <div class="clear"></div>
             <div id="bar" style="display:none;"  class="bar">
-                <a class="respon"href="index-masuk.html" class="active">BERANDA</a>
-                <a class="respon"href="semua.html">SEMUA KOMIK</a>
-                <a class="respon" href="terbaru.html">TERBARU</a>
+                <a class="respon"href="/web/unauth/index.html" class="active">BERANDA</a>
+                <a class="respon"href="/web/unauth/semuaKomik.html">SEMUA KOMIK</a>
+                <a class="respon" href="/web/unauth/terbaru.html">TERBARU</a>
             </div>
-            <div id="find" style="display:none;"  class="bar">
-                <input class="respon" type="text" placeholder="   Cari">
+            <div id="find" style="display:none"  class="bar">
+                <input class="respon" type="text" placeholder="Cari">
             </div>
         </ul>
     </nav>
 
-    <div class="bg-modal" id="beli" style="display:none;">
-        <div class="modal-konten">
+    <div class="bg-modal" id="beli" style="display: none">
+        <div class="pop-konten">
             <div class="tutup" onclick="tutup();">+</div>
-            <h1>Beli</h1>
-            <p>Jumlah uang  Rp 1.000.000</p>
-            <p>Harga Rp 250.000</p>
-            <form class="" action="detail-masuk.html" method="post">
-                <button type="button" name="button">BELI</button>
-            </form>
+            <h1>Perhatian</h1>
+            <p>ANDA HARUS MASUK TERLEBIH DAHULU SEBELUM MEMBELI !</p>
+            <a href="/web/unauth/login.html" class="btn-masuk"> MASUK</a>
         </div>
     </div>
-    <!-- untuk peringatan keluar akun -->
-        <div class="bg-modal" id="keluarAkun" style="display:none;">
-            <div class="modal-konten" style="max-height: 150px;">
-                <h1>yakin ingin keluar?</h1>
-                <br>
-                <button type="button" name="button" onclick="tutup();">tidak</button>
-                <button type="button" name="button" onclick="signout();">ya</button>
-            </div>
-        </div>
 
     <!-- konten -->
-    <section class="ini-isi" onclick="closeDrop();"> <!-- opo div enake  ? -->
+    <section class="ini-isi"> <!-- opo div enake  ? -->
         <div class="g">
-            <img style="z-index: -10" src="img/banner sijuki keroyokan 3.jpg" alt="">   <!-- gambar cover banner komik -->
+            <img style="z-index: -10" src="/public/img/banner sijuki keroyokan 3.jpg" alt="">   <!-- gambar cover banner komik -->
         </div>
         <div class="d-kiri">
             <div class="a"> <!-- gawe cover komik e -->
                 <div class="a1">
                     <div class="aa1">
-                        <img src="img/si juki-keroyokan250.jpg" alt="">  <!-- cover komik -->
+                        <img src="/public/img/si juki-keroyokan250.jpg" alt="">  <!-- cover komik -->
                     </div>
                 </div>
                 <div class="a2">
@@ -98,6 +82,7 @@
                     <div class="par"><p>Faza Meonk</p><!-- penulis -->
                         <p>Bersambung | 179 Episode</p><!-- ongoing -->
                     </div>
+                    <h4>Terjual</h4><h4 id="counter"></h4>
                     <div class="btn-beli" href="javascript:void(0);" onclick="beli()">
                         <a href="javascript:void(0);" onclick="beli()">Beli</a>
                     </div>
@@ -123,11 +108,9 @@
             <div class="c"> <!-- gawe tulisan chapter e-->
                 <h3>Episode</h3>
                 <div class="cc">
-                    <a href="view.html">
-                        <p>Episode 179</p>
+                    <a href="view.html"><p>Episode 179</p>
                         <p>|</p>
-                        <P>Keroyokan</P>
-                    </a>
+                        <P>Keroyokan</P></a>
                 </div>
                 <div class="cc">
                     <p>Episode 178</p>
@@ -160,7 +143,7 @@
                     </div>
                     <div class="kk-isi">
                         <a href="">
-                            <img src="img/si juki- cari kerja77.jpg" alt="cover" sizes="20%" >
+                            <img src="/public/img/si juki- cari kerja77.jpg" alt="cover" sizes="20%" >
                             <div class="lol">
                                   <p class="judul">Si Juki</p>
                                  <p class="pengarang">Faza Meonk</p>
@@ -170,7 +153,7 @@
                     </div>
                     <div class="kk-isi">
                         <a href="">
-                            <img src="img/si juki- cari kerja77.jpg" alt="cover" sizes="20%" >
+                            <img src="/public/img/si juki- cari kerja77.jpg" alt="cover" sizes="20%" >
                             <div class="lol">
                                   <p class="judul">Si Juki</p>
                                  <p class="pengarang">Faza Meonk</p>
@@ -192,7 +175,7 @@
                         </div>
                         <div class="lo">
                             <a href="">
-                                <img src="img/si abi77.jpg" alt="cover" sizes="20%" >
+                                <img src="/public/img/si abi77.jpg" alt="cover" sizes="20%" >
                                 <div class="lol">
                                     <p class="judul">Si Abi</p>
                                     <p class="pengarang">Anone</p>
@@ -210,36 +193,31 @@
  <!-- FOOTER -->
  <div class="clear"></div>
 
-    <footer>
-        <div>
-            <a href="tentangKami.html">Tentang Kami</a>
-            <a href="ketentuanLayanan.html">Ketentuan Layanan</a>
-            <a href="dukunganPelanggan.html">Dukungan Pelanggan</a>
-        </div>
-        <div>
-            <p>© 2019</p>
-        </div>
-    </footer>
+ <footer>
+    <div>
+        <a href="/web/unauth/tentangKami.html">Tentang Kami</a>
+        <a href="/web/unauth/ketentuanLayanan.html">Ketentuan Layanan</a>
+        <a href="/web/unauth/dukunganPelanggan.html">Dukungan Pelanggan</a>
+    </div>
+    <div>
+        <p>© 2023</p>
+    </div>
+</footer>
+
     <div id="loading">
         <p></p>
     </div>
-    <button id="dark-mode"style="cursor: pointer; border-radius: 50%; background:#ccc;width: 40px; height: 40px; position: fixed; bottom: 20px; right:20px;" type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
 
-    <script src="js/jquery/jquery-3.4.1.min.js"></script>
-    <script src="js/dark-mode.js"></script>
-    <script src="js/loading.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/lebihBanyak.js"></script>
-    <script src="js/modalBox.js"></script>
+    <script src="/public/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/public/js/loading.js"></script>
+    <script src="/public/js/navbar.js"></script>
+    <script src="/public/js/lebihBanyak.js"></script>
     <script>
         function beli() {
             document.getElementById("beli").style.display = "flex";
         }
         function tutup() {
             document.getElementById("beli").style.display = "none";
-        }
-        function signout(){
-          window.location.href = "detail.html";
         }
         </script>
 </body>

@@ -18,6 +18,6 @@ function validasi(){
   //lanjut ke halaman selanjutnya
 function lanjut(){
   if(isEmail==true){
-    window.location.href = "daftar2.html";
+    window.location.href = "/web/unauth/daftar2.html";
   }
 }

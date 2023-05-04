@@ -1,3 +1,6 @@
+.konten {
+    background-color: var(--theme-color);
+}
 
 /* masuk dan daftar*/
 form {

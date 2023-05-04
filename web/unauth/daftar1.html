@@ -19,34 +19,41 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-  <!-- navbar -->
-        <nav class="topnav" id="myTopnav">
-            <ul>
-                <div class="kiri">
-                    <li><a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a>
-                    </li>
-                    <li><a href="index.html" ><img class="logo" src="img/BACA KOMIK ICON.png" alt=""></a></li>
-                    <li><a class="respon"href="index.html" class="active">BERANDA</a> </li>
-                    <li><a class="respon"href="semua.html">SEMUA KOMIK</a> </li>
-                    <li><a class="respon" href="terbaru.html">TERBARU</a></li>
-                </div>
+    <!-- navbar -->
+    <nav class="topnav" id="myTopnav">
+        <ul>
+            <div class="kiri">
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="bar()"> 
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+                <li><a href="/web/unauth/index.html" ><img class="logo" src="/public/img/BACA KOMIK ICON.png" alt=""></a></li>
+                <li><a class="respon"href="/web/unauth/index.html" class="active">BERANDA</a> </li>
+                <li><a class="respon"href="/web/unauth/semuaKomik.html">SEMUA KOMIK</a> </li>
+                <li><a class="respon" href="/web/unauth/terbaru.html">TERBARU</a></li>
+            </div>
             <div class="kanan">
-                    <li><a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a>
+                    <li>
+                        <a href="javascript:void(0);" class="icon" onclick="find()">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
                     </li>
-                    <li> <input class="respon" type="text" placeholder="   Cari"> </li>
-                    <a  href="masuk.html"> MASUK</a>
+                    <li> <input class="respon" type="text" name="search" id="search" placeholder="Cari"> </li>
+                    <ul class="list-group" id="result"></ul>
+                    <a  href="/web/unauth/login.html">Masuk</a>
             </div>
             <div class="clear"></div>
             <div id="bar" style="display:none;"  class="bar">
-              <a class="respon"href="index.html" class="active">BERANDA</a>
-              <a class="respon"href="semua.html">SEMUA KOMIK</a>
-              <a class="respon" href="terbaru.html">TERBARU</a>
+                <a class="respon"href="/web/unauth/index.html" class="active">BERANDA</a>
+                <a class="respon"href="/web/unauth/semuaKomik.html">SEMUA KOMIK</a>
+                <a class="respon" href="/web/unauth/terbaru.html">TERBARU</a>
             </div>
-            <div id="find" style="display:none;"  class="bar">
-              <input class="respon" type="text" placeholder="   Cari">
+            <div id="find" style="display:none"  class="bar">
+                <input class="respon" type="text" placeholder="Cari">
             </div>
-            </ul>
-        </nav>
+        </ul>
+    </nav>
 
 <!-- conten -->
     <div class="konten">
@@ -61,12 +68,12 @@
     <!-- footer -->
     <footer>
         <div>
-            <a href="tentangKami.html">Tentang Kami</a>
-            <a href="ketentuanLayanan.html">Ketentuan Layanan</a>
-            <a href="dukunganPelanggan.html">Dukungan Pelanggan</a>
+            <a href="/web/unauth/tentangKami.html">Tentang Kami</a>
+            <a href="/web/unauth/ketentuanLayanan.html">Ketentuan Layanan</a>
+            <a href="/web/unauth/dukunganPelanggan.html">Dukungan Pelanggan</a>
         </div>
         <div>
-            <p>© 2019</p>
+            <p>© 2023</p>
         </div>
     </footer>
 

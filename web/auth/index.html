@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home-masuk.css">
-    <link rel="stylesheet" href="css/modal_verifikasi.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/home-masuk.css">
+    <link rel="stylesheet" href="/public/css/modal_verifikasi.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>BACA KOMIK</title>
 <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/public/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/public/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="topnav" id="myTopnav">
         <ul>
             <div class="kiri">
                 <li><a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a></li>
-                <li><a href="index-masuk.html" ><img class="logo" src="img/BACA KOMIK ICON.png" alt=""></a></li>
-                <li><a class="respon"href="index-masuk.html" class="active">BERANDA</a> </li>
-                <li><a class="respon"href="semua-masuk.html">SEMUA KOMIK</a> </li>
-                <li><a class="respon" href="terbaru.html">TERBARU</a></li>
+                <li><a href="/web/auth/index.html" ><img class="logo" src="/public/img/BACA KOMIK ICON.png" alt=""></a></li>
+                <li><a class="respon"href="/web/auth/index.html" class="active">BERANDA</a> </li>
+                <li><a class="respon"href="/web/auth/semuaKomik.html">SEMUA KOMIK</a> </li>
+                <li><a class="respon" href="/web/auth/terbaru.html">TERBARU</a></li>
             </div>
             <div class="kanan">
                 <li><a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a></li>
@@ -40,8 +41,8 @@
                     <li onclick="verif();"><a class="hijau size14" href="javascript:void(0);">Belum terverifikasi</a></li> <br>
                     <li class="garis" onclick="uang();"><a class="size14"  href="javascript:void(0);">Rp. 1,000,000 <i class="fa fa-plus-square" aria-hidden="true"></i></a></li><br>
                     <li><a href="" style="color:black; cursor:default;">komik</a></li> <br>
-                    <li><a class="abu"href="komikSaya.html">komik saya</a></li> <br>
-                    <li><a class="abu"href="komikTerbeli.html">koleksi terbeli</a></li> <br>
+                    <li><a class="abu"href="/web/auth/komikSaya.html">komik saya</a></li> <br>
+                    <li><a class="abu"href="/web/auth/komikTerbeli.html">koleksi terbeli</a></li> <br>
                     <li class="garis" onclick="tambahKomik();"><a href="javascript:void(0);" class="abu"  >tambah komik</a></li> <br>
                     <li class="garis" onclick="profil();"><a href="javascript:void(0);">Edit Profil</a></li> <br>
                     <li  onclick="keluarAkun(); "><a class="merah"href="javascript:void(0);">Logout</a></li>
@@ -49,9 +50,9 @@
             </div>
             <div class="clear"></div>
             <div id="bar" style="display:none;"  class="bar">
-                <a class="respon"href="index-masuk.html" class="active">BERANDA</a>
-                <a class="respon"href="semua.html">SEMUA KOMIK</a>
-                <a class="respon" href="terbaru.html">TERBARU</a>
+                <a class="respon"href="/web/auth/index.html" class="active">BERANDA</a>
+                <a class="respon"href="/web/auth/semuaKomik.html">SEMUA KOMIK</a>
+                <a class="respon" href="/web/auth/terbaru.html">TERBARU</a>
             </div>
             <div id="find" style="display:none;"  class="bar">
                 <input class="respon" type="text" placeholder="   Cari">
@@ -87,7 +88,7 @@
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
             <h1>Tambah komik</h1>
-            <form class="" action="index.html" method="post">
+            <form class="" action="/web/auth/index.html" method="post">
                 <input type="text" name="" id="" placeholder="judul komik"><br>
                 <textarea name="message" style="width:300px; height:100px;" placeholder="deskripsi"></textarea><br>
                 <label for="file" style="padding-top:10px;">gambar cover</label> <br>
@@ -104,7 +105,7 @@
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
             <h1>verifikasi identitas kreator</h1>
-            <form class="" action="index.html" method="post">
+            <form class="" action="/web/auth/index.html" method="post">
                 <input type="text" name="" id="" placeholder="nama lengkap"><br>
                 <input type="text" name="" id="" placeholder="no. Telepon/HP"><br>
                 <input type="text" name="" id="" placeholder="alamat"><br>
@@ -122,7 +123,7 @@
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
             <h1>Topup Uang</h1>
-            <form class="" action="index.html" method="post">
+            <form class="" action="/web/auth/index.html" method="post">
                 <input type="text" name="" id="" placeholder="nominal uang dalam Rp."><br>
                 <label for="bayar">bayar dengan metode : </label><br>
                 <div>
@@ -139,7 +140,7 @@
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
             <h1>Edit Profil</h1>
-            <form class="" action="index.html" method="post">
+            <form class="" action="/web/auth/index.html" method="post">
                 <input type="text" name="" id="" placeholder="nama lengkap"><br>
                 <input type="text" name="" id="" placeholder="no. Telepon/HP"><br>
                 <input type="text" name="" id="" placeholder="alamat"><br>
@@ -172,15 +173,15 @@
                             <p class="jud">TRENDING UPDATE</p>
                         </div>
                         <div class="atas-kanan">
-                            <a href="terbaru.html">Lihat semua</a>
+                            <a href="/web/auth/terbaru.html">Lihat semua</a>
                         </div>
                     </div>
                 </div>
                 <div class="tengah">
                     <div class="cover1">
                         <div>
-                            <a href="detail-masuk.html">
-                                <img src="img/si abi142.jpg" alt="cover" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/si abi142.jpg" alt="cover" >
                                 <div>
                                     <p class="judul">Si Abi</p>
                                     <p class="episode">Episode 222</p>
@@ -190,8 +191,8 @@
                     </div>
                     <div class="cover1">
                         <div>
-                            <a href="detail-masuk.html">
-                                <img src="img/si juki- cari kerja142.jpg" alt="cover" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/si juki- cari kerja142.jpg" alt="cover" >
                                 <div>
                                     <p class="judul">Si Juki</p>
                                     <p class="episode">Episode 179</p>
@@ -201,8 +202,8 @@
                     </div>
                     <div class="cover1">
                         <div>
-                            <a href="detail-masuk.html">
-                                <img src="img/si nopal142.jpg" alt="cover" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/si nopal142.jpg" alt="cover" >
                                 <div>
                                     <p class="judul">Si Nopal</p>
                                     <p class="episode">Episode 179</p>
@@ -212,8 +213,8 @@
                     </div>
                     <div class="cover1">
                         <div>
-                            <a href="detail-masuk.html">
-                                <img src="img/garudayana142.jpg" alt="cover" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/garudayana142.jpg" alt="cover" >
                                 <div>
                                     <p class="judul">Garudayana</p>
                                     <p class="episode">Episode 19</p>
@@ -223,8 +224,8 @@
                     </div>
                     <div class="cover1">
                         <div>
-                            <a href="detail-masuk.html">
-                                <img src="img/dalang pelo142.jpg" alt="cover" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/dalang pelo142.jpg" alt="cover" >
                                 <div>
                                     <p class="judul">Dalang Pelo</p>
                                     <p class="episode">Episode 17</p>
@@ -234,8 +235,8 @@
                     </div>
                     <div class="cover1">
                         <div>
-                            <a href="detail-masuk.html">
-                                <img src="img/garudayana142.jpg" alt="cover" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/garudayana142.jpg" alt="cover" >
                                 <div>
                                     <p class="judul">Garudayana</p>
                                     <p class="episode">Episode 19</p>
@@ -245,8 +246,8 @@
                     </div>
                     <div class="cover1">
                         <div>
-                            <a href="detail-masuk.html">
-                                <img src="img/dalang pelo142.jpg" alt="cover" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/dalang pelo142.jpg" alt="cover" >
                                 <div>
                                     <p class="judul">Dalang Pelo</p>
                                     <p class="episode">Episode 17</p>
@@ -271,103 +272,103 @@
                             <p class="jud">UPDATE TERBARU</p>
                         </div>
                         <div class="atas-kanan">
-                            <a href="terbaru.html">Lihat semua</a>
+                            <a href="/web/auth/terbaru.html">Lihat semua</a>
                         </div>
                     </div>
                 </div>
                     <div class="row">
                         <div class="column">
                             <div class="card">
-                                <a href="detail-masuk.html">
-                                    <img src="img/si juki-keroyokan77.jpg" alt="cover" sizes="20%" >
+                                <a href="/web/auth/detailKomik.html">
+                                    <img src="/public/img/si juki-keroyokan77.jpg" alt="cover" sizes="20%" >
                                 </a>
                             </div>
                         </div>
                         <div class="column">
                             <div class="card">
-                                <a href="detail-masuk.html"><p class="judul">Si Juki</p></a>
+                                <a href="/web/auth/detailKomik.html"><p class="judul">Si Juki</p></a>
                             </div>
                         </div>
                         <div class="column">
                             <div class="card">
-                                <a href=""><p class="episode">Episode 179</p></a>
+                                <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 179</p></a>
                             </div>
                         </div>
                         <div class="column">
                                 <div class="card">
-                                    <p>1 menit yang lalu</p>
+                                    <p class="waktu">1 menit yang lalu</p>
                                 </div>
                             </div>
                     </div>
                     <div class="row">
                             <div class="column">
                                 <div class="card">
-                                    <a href="">
-                                        <img src="img/garudayana77.jpg" alt="cover" sizes="20%" >
+                                    <a href="/web/auth/detailKomik.html">
+                                        <img src="/public/img/garudayana77.jpg" alt="cover" sizes="20%" >
                                     </a>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="card">
-                                    <a href=""><p class="judul">Garudayana</p></a>
+                                    <a href="/web/auth/detailKomik.html"><p class="judul">Garudayana</p></a>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="card">
-                                    <a href=""><p class="episode">Episode 19</p></a>
+                                    <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 19</p></a>
                                 </div>
                             </div>
                             <div class="column">
                                     <div class="card">
-                                        <p>10 menit yang lalu</p>
+                                        <p class="waktu">10 menit yang lalu</p>
                                     </div>
                             </div>
                     </div>
                     <div class="row">
                             <div class="column">
                                 <div class="card">
-                                    <a href="">
-                                        <img src="img/dalang pelo77.jpg" alt="cover" sizes="20%" >
+                                    <a href="/web/auth/detailKomik.html">
+                                        <img src="/public/img/dalang pelo77.jpg" alt="cover" sizes="20%" >
                                     </a>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="card">
-                                    <a href=""><p class="judul">Dalang Pelo</p></a>
+                                    <a href="/web/auth/detailKomik.html"><p class="judul">Dalang Pelo</p></a>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="card">
-                                    <a href=""><p class="episode">Episode 17</p></a>
+                                    <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 17</p></a>
                                 </div>
                             </div>
                             <div class="column">
                                     <div class="card">
-                                        <p>11 menit yang lalu</p>
+                                        <p class="waktu">11 menit yang lalu</p>
                                     </div>
                             </div>
                     </div>
                     <div class="row">
                             <div class="column">
                                 <div class="card">
-                                    <a href="">
-                                        <img src="img/dalang pelo77.jpg" alt="cover" sizes="20%" >
+                                    <a href="/web/auth/detailKomik.html">
+                                        <img src="/public/img/dalang pelo77.jpg" alt="cover" sizes="20%" >
                                     </a>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="card">
-                                    <a href=""><p class="judul">Dalang Pelo</p></a>
+                                    <a href="/web/auth/detailKomik.html"><p class="judul">Dalang Pelo</p></a>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="card">
-                                    <a href=""><p class="episode">Episode 17</p></a>
+                                    <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 17</p></a>
                                 </div>
                             </div>
                             <div class="column">
                                     <div class="card">
-                                        <p>11 menit yang lalu</p>
+                                        <p class="waktu">11 menit yang lalu</p>
                                     </div>
                             </div>
                     </div>
@@ -411,14 +412,14 @@
                                     <p class="jud">Paling Populer</p>
                                 </div>
                                 <div class="atas-kanan">
-                                    <a href="terbaru.html">Lihat semua</a>
+                                    <a href="/web/auth/terbaru.html">Lihat semua</a>
                                 </div>
                             </div>
                     <div isi2>
                         <div class="kanan2-isi">
                             <div class="num">1.</div>
-                            <a href="">
-                                <img src="img/si juki-keroyokan77.jpg" alt="cover" sizes="20%" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/si juki-keroyokan77.jpg" alt="cover" sizes="20%" >
                                 <div class="lol">
                                     <p class="judul">Si Juki</p>
                                     <p class="pengarang">Faza Meonk</p>
@@ -428,8 +429,8 @@
                         </div>
                         <div class="kanan2-isi">
                             <div class="num">2.</div>
-                            <a href="">
-                                <img src="img/si abi77.jpg" alt="cover" sizes="20%" >
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/si abi77.jpg" alt="cover" sizes="20%" >
                                 <div class="lol">
                                     <p class="judul">Si Abi</p>
                                     <p class="pengarang">Anone</p>
@@ -447,26 +448,28 @@
 
     <footer>
         <div>
-            <a href="tentangKami.html">Tentang Kami</a>
-            <a href="ketentuanLayanan.html">Ketentuan Layanan</a>
-            <a href="dukunganPelanggan.html">Dukungan Pelanggan</a>
+            <a href="/web/auth/tentangKami.html">Tentang Kami</a>
+            <a href="/web/auth/ketentuanLayanan.html">Ketentuan Layanan</a>
+            <a href="/web/auth/dukunganPelanggan.html">Dukungan Pelanggan</a>
         </div>
         <div>
-            <p>© 2019</p>
+            <p>© 2023</p>
         </div>
     </footer>
+
     <div id="loading">
       <p></p>
     </div>
+    
     <button id="dark-mode"style="cursor: pointer; border-radius: 50%; background:#ccc;width: 40px; height: 40px; position: fixed; bottom: 20px; right:20px;" type="button" name="dark_light" title="Toggle dark/light mode">🌛</button>
 
-    <script src="js/jquery/jquery-3.4.1.min.js"></script>
-    <script src="js/loading.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/modalBox.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/dark-mode.js"></script>
-    <script src="js/lebihBanyak.js"></script>
+    <script src="/public/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/public/js/loading.js"></script>
+    <script src="/public/js/navbar.js"></script>
+    <script src="/public/js/modalBox.js"></script>
+    <script src="/public/js/slider.js"></script>
+    <script src="/public/js/dark-mode.js"></script>
+    <script src="/public/js/lebihBanyak.js"></script>
 
   </body>
 </html>

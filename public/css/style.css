@@ -10,9 +10,10 @@
     --judul:#000000;
     --episode:#000000;
     --pengarang:#000000;
+    --waktu: #000000;
     --nth:#e9e9e9;
-    --hovv:#e2e2e2;
-    --atas:#e2e2e2
+    --hovv:#cc9d02;
+    --atas:#cc9d02;
 }
 body{
   background-image: var(--bg-img);
@@ -29,13 +30,14 @@ body{
 [data-theme="dark"] {
     --primary-color: #9A97F3;
     --secondary-color: #818cab;
-    --font-color: #e1e1ff;
+    --font-color: #424242;
     --bg-color: rgb(20, 20, 20);
     --heading-color: #818cab;
     --bg-img: url("../img/background-black.png");
     --judul:#fff;
     --episode:#fff;
     --pengarang:#fff;
+    --waktu: #fff;
     --nth:#494949;
     --hovv:#363636;
     --atas:#363636;
@@ -384,7 +386,7 @@ nav #find input{
 /* footer  */
 footer{
   position: static;
-  background-color: var(--bg-color);
+  background-color: var(--theme-color);
   width: 100%;
   text-align: center;
   margin:0;
