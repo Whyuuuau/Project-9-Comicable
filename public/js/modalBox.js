@@ -99,7 +99,7 @@ function tutup() {
     $(terbuka).fadeToggle();
     }
 function signout(){
-      window.location.href = "index.html";
+      window.location.href = "/web/unauth/index.html";
     }
 function verifikasi(){
   if(tengokIsi()){

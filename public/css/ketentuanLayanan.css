@@ -1,3 +1,7 @@
+.konten {
+    background-color: var(--theme-color);
+}
+
 .konten h1{
   text-align: center;
 }

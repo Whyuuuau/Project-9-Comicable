@@ -1,9 +1,9 @@
-.left{
+.left {
   text-align: center;
   float: left;
   box-sizing: bo2rder-box;
   width: 25%;
-  background-color: #fff;
+  background-color: var(--theme-color);
   height: 100vh;
   position: fixed;
   left: 0;
@@ -22,7 +22,7 @@
 .konten{
   text-align: center;
   margin: 20px;
-  background-color: #fff;
+  background-color: var(--theme-color);
 }
 .profil{
   padding: 40px;

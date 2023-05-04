@@ -20,7 +20,7 @@ $(document).ready(function() {
 			$('.content2').css('visibility','visible');
 		}
 		else{
-			window.location.href = "index-masuk.html";
+			window.location.href = "/web/auth/index.html";
 		}
 	});
 });
