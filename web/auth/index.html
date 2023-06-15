@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>BACA KOMIK</title>
-<!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/public/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/img/favicon/favicon-16x16.png">
@@ -19,71 +20,83 @@
     <link rel="mask-icon" href="/public/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js "></script>
+    <script src="/public/js/firebase/config.js"></script>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="topnav" id="myTopnav">
         <ul>
             <div class="kiri">
-                <li><a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a></li>
-                <li><a href="/web/auth/index.html" ><img class="logo" src="/public/img/BACA KOMIK ICON.png" alt=""></a></li>
-                <li><a class="respon"href="/web/auth/index.html" class="active">BERANDA</a> </li>
-                <li><a class="respon"href="/web/auth/semuaKomik.html">SEMUA KOMIK</a> </li>
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a>
+                </li>
+                <li>
+                    <a href="/web/auth/index.html"><img class="logo" src="/public/img/BACA KOMIK ICON.png" alt=""></a>
+                </li>
+                <li><a class="respon" href="/web/auth/index.html" class="active">BERANDA</a> </li>
+                <li><a class="respon" href="/web/auth/semuaKomik.html">SEMUA KOMIK</a> </li>
                 <li><a class="respon" href="/web/auth/terbaru.html">TERBARU</a></li>
             </div>
             <div class="kanan">
-                <li><a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a></li>
-                <i  style="margin-top:10px; color:#2095F2;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-caret-down" aria-hidden="true" style="color:#2095F2;" ></i>
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a>
+                </li>
+                <i style="margin-top:10px; color:#2095F2;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-caret-down" aria-hidden="true" style="color:#2095F2;"></i>
                 <li> <input class="respon" type="text" placeholder="   Cari"> </li>
-                <ul id="dropdown"style="display:none">
-                    <li ><a href="#" class="biru size18">akun@gmail.com</a></li> <br>
+                <ul id="dropdown" style="display:none">
+                    <li><a href="#" class="biru size18">akun@gmail.com</a></li> <br>
                     <li onclick="verif();"><a class="hijau size14" href="javascript:void(0);">Belum terverifikasi</a></li> <br>
-                    <li class="garis" onclick="uang();"><a class="size14"  href="javascript:void(0);">Rp. 1,000,000 <i class="fa fa-plus-square" aria-hidden="true"></i></a></li><br>
+                    <li class="garis" onclick="uang();"><a class="size14" href="javascript:void(0);">Rp. 1,000,000 <i class="fa fa-plus-square" aria-hidden="true"></i></a></li><br>
                     <li><a href="" style="color:black; cursor:default;">komik</a></li> <br>
-                    <li><a class="abu"href="/web/auth/komikSaya.html">komik saya</a></li> <br>
-                    <li><a class="abu"href="/web/auth/komikTerbeli.html">koleksi terbeli</a></li> <br>
-                    <li class="garis" onclick="tambahKomik();"><a href="javascript:void(0);" class="abu"  >tambah komik</a></li> <br>
+                    <li><a class="abu" href="/web/auth/komikSaya.html">komik saya</a></li> <br>
+                    <li><a class="abu" href="/web/auth/komikTerbeli.html">koleksi terbeli</a></li> <br>
+                    <li class="garis" onclick="tambahKomik();"><a href="javascript:void(0);" class="abu">tambah komik</a></li> <br>
                     <li class="garis" onclick="profil();"><a href="javascript:void(0);">Edit Profil</a></li> <br>
-                    <li  onclick="keluarAkun(); "><a class="merah"href="javascript:void(0);">Logout</a></li>
+                    <li onclick="keluarAkun(); "><a class="merah" href="javascript:void(0);">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
-            <div id="bar" style="display:none;"  class="bar">
-                <a class="respon"href="/web/auth/index.html" class="active">BERANDA</a>
-                <a class="respon"href="/web/auth/semuaKomik.html">SEMUA KOMIK</a>
+            <div id="bar" style="display:none;" class="bar">
+                <a class="respon" href="/web/auth/index.html" class="active">BERANDA</a>
+                <a class="respon" href="/web/auth/semuaKomik.html">SEMUA KOMIK</a>
                 <a class="respon" href="/web/auth/terbaru.html">TERBARU</a>
             </div>
-            <div id="find" style="display:none;"  class="bar">
+            <div id="find" style="display:none;" class="bar">
                 <input class="respon" type="text" placeholder="   Cari">
             </div>
         </ul>
     </nav>
 
-<!-- modal box -->
-<div class="content" >
-  <div class="header">
-    <!-- <p>Data Tersimpan</p> -->
-    <label for="click" class="fas fa-times" onclick="closeverif();"></label>
-  </div>
-  <label for="click" class="fas fa-check" ></label>
-  <p>selamat! Komik berhasil ditambahkan dan telah tersimpan.</p>
-  <div class="line"></div>
-  <label for="click" class="close-btn" onclick="closeverif();">Close</label>
-</div>
+    <!-- modal box -->
+    <div class="content">
+        <div class="header">
+            <!-- <p>Data Tersimpan</p> -->
+            <label for="click" class="fas fa-times" onclick="closeverif();"></label>
+        </div>
+        <label for="click" class="fas fa-check"></label>
+        <p>selamat! Komik berhasil ditambahkan dan telah tersimpan.</p>
+        <div class="line"></div>
+        <label for="click" class="close-btn" onclick="closeverif();">Close</label>
+    </div>
 
-<div class="content2" >
-  <div class="header2">
-    <!-- <p>Data Tersimpan</p> -->
-    <label for="click" class="fas fa-times" onclick="closeverif();"></label>
-  </div>
-  <label id="kedua" for="click" class="fas fa-times" ></label>
-  <p> input masih ada yang kosong nih, isi dulu ya kak.</p>
-  <div class="line"></div>
-  <label for="click" class="close-btn2" onclick="closeverif();">Close</label>
-</div>
+    <div class="content2">
+        <div class="header2">
+            <!-- <p>Data Tersimpan</p> -->
+            <label for="click" class="fas fa-times" onclick="closeverif();"></label>
+        </div>
+        <label id="kedua" for="click" class="fas fa-times"></label>
+        <p> input masih ada yang kosong nih, isi dulu ya kak.</p>
+        <div class="line"></div>
+        <label for="click" class="close-btn2" onclick="closeverif();">Close</label>
+    </div>
 
-<!-- untuk tambah komik -->
+    <!-- untuk tambah komik -->
     <div class="bg-modal" id="tambah" style="display:none;">
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
@@ -100,7 +113,7 @@
         </div>
     </div>
 
-<!-- untuk verifikasi -->
+    <!-- untuk verifikasi -->
     <div class="bg-modal" id="verif" style="display:none;">
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
@@ -118,7 +131,7 @@
             <button type="button" name="button" onclick="verifikasi();">verifikasi</button>
         </div>
     </div>
-<!-- untuk tambah uang -->
+    <!-- untuk tambah uang -->
     <div class="bg-modal" id="uang" style="display:none;">
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
@@ -135,7 +148,7 @@
             <button type="button" name="button" onclick="verifikasi();">TAMBAH</button>
         </div>
     </div>
-<!-- untuk edit profil -->
+    <!-- untuk edit profil -->
     <div class="bg-modal" id="profil" style="display:none;">
         <div class="modal-konten">
             <div class="tutup" onclick="tutup();">+</div>
@@ -153,7 +166,7 @@
             <button type="button" name="button" onclick="verifikasi();">verifikasi</button>
         </div>
     </div>
-<!-- untuk peringatan keluar akun -->
+    <!-- untuk peringatan keluar akun -->
     <div class="bg-modal" id="keluarAkun" style="display:none;">
         <div class="modal-konten" style="max-height: 150px;">
             <h1>yakin ingin keluar?</h1>
@@ -163,10 +176,10 @@
         </div>
     </div>
 
-<!-- KONTEN -->
-<div class="konten" style="background: none;"onclick="closeDrop();">
+    <!-- KONTEN -->
+    <div class="konten" style="background: none;" onclick="closeDrop();">
         <div class="main-kiri">
-            <div class="isi">
+            <div class="isi" id="isi">
                 <div class="isi2">
                     <div class="atas">
                         <div class="atas-kiri">
@@ -181,7 +194,7 @@
                     <div class="cover1">
                         <div>
                             <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/si abi142.jpg" alt="cover" >
+                                <img src="/public/img/si abi142.jpg" alt="cover">
                                 <div>
                                     <p class="judul">Si Abi</p>
                                     <p class="episode">Episode 222</p>
@@ -191,8 +204,8 @@
                     </div>
                     <div class="cover1">
                         <div>
-                            <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/si juki- cari kerja142.jpg" alt="cover" >
+                            <a>
+                                <img src="/public/img/si juki- cari kerja142.jpg" id="juki" alt="cover">
                                 <div>
                                     <p class="judul">Si Juki</p>
                                     <p class="episode">Episode 179</p>
@@ -203,7 +216,7 @@
                     <div class="cover1">
                         <div>
                             <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/si nopal142.jpg" alt="cover" >
+                                <img src="/public/img/si nopal142.jpg" alt="cover">
                                 <div>
                                     <p class="judul">Si Nopal</p>
                                     <p class="episode">Episode 179</p>
@@ -214,7 +227,7 @@
                     <div class="cover1">
                         <div>
                             <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/garudayana142.jpg" alt="cover" >
+                                <img src="/public/img/garudayana142.jpg" alt="cover">
                                 <div>
                                     <p class="judul">Garudayana</p>
                                     <p class="episode">Episode 19</p>
@@ -225,7 +238,7 @@
                     <div class="cover1">
                         <div>
                             <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/dalang pelo142.jpg" alt="cover" >
+                                <img src="/public/img/dalang pelo142.jpg" alt="cover">
                                 <div>
                                     <p class="judul">Dalang Pelo</p>
                                     <p class="episode">Episode 17</p>
@@ -236,7 +249,7 @@
                     <div class="cover1">
                         <div>
                             <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/garudayana142.jpg" alt="cover" >
+                                <img src="/public/img/garudayana142.jpg" alt="cover">
                                 <div>
                                     <p class="judul">Garudayana</p>
                                     <p class="episode">Episode 19</p>
@@ -247,7 +260,7 @@
                     <div class="cover1">
                         <div>
                             <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/dalang pelo142.jpg" alt="cover" >
+                                <img src="/public/img/dalang pelo142.jpg" alt="cover">
                                 <div>
                                     <p class="judul">Dalang Pelo</p>
                                     <p class="episode">Episode 17</p>
@@ -276,172 +289,185 @@
                         </div>
                     </div>
                 </div>
-                    <div class="row">
-                        <div class="column">
-                            <div class="card">
-                                <a href="/web/auth/detailKomik.html">
-                                    <img src="/public/img/si juki-keroyokan77.jpg" alt="cover" sizes="20%" >
-                                </a>
-                            </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/si juki-keroyokan77.jpg" alt="cover" sizes="20%">
+                            </a>
                         </div>
-                        <div class="column">
-                            <div class="card">
-                                <a href="/web/auth/detailKomik.html"><p class="judul">Si Juki</p></a>
-                            </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <p class="judul">Si Juki</p>
+                            </a>
                         </div>
-                        <div class="column">
-                            <div class="card">
-                                <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 179</p></a>
-                            </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/bacaKomik.html">
+                                <p class="episode">Episode 179</p>
+                            </a>
                         </div>
-                        <div class="column">
-                                <div class="card">
-                                    <p class="waktu">1 menit yang lalu</p>
-                                </div>
-                            </div>
                     </div>
-                    <div class="row">
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/detailKomik.html">
-                                        <img src="/public/img/garudayana77.jpg" alt="cover" sizes="20%" >
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/detailKomik.html"><p class="judul">Garudayana</p></a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 19</p></a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                    <div class="card">
-                                        <p class="waktu">10 menit yang lalu</p>
-                                    </div>
-                            </div>
+                    <div class="column">
+                        <div class="card">
+                            <p class="waktu">1 menit yang lalu</p>
+                        </div>
                     </div>
-                    <div class="row">
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/detailKomik.html">
-                                        <img src="/public/img/dalang pelo77.jpg" alt="cover" sizes="20%" >
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/detailKomik.html"><p class="judul">Dalang Pelo</p></a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 17</p></a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                    <div class="card">
-                                        <p class="waktu">11 menit yang lalu</p>
-                                    </div>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/garudayana77.jpg" alt="cover" sizes="20%">
+                            </a>
+                        </div>
                     </div>
-                    <div class="row">
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/detailKomik.html">
-                                        <img src="/public/img/dalang pelo77.jpg" alt="cover" sizes="20%" >
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/detailKomik.html"><p class="judul">Dalang Pelo</p></a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                    <a href="/web/auth/bacaKomik.html"><p class="episode">Episode 17</p></a>
-                                </div>
-                            </div>
-                            <div class="column">
-                                    <div class="card">
-                                        <p class="waktu">11 menit yang lalu</p>
-                                    </div>
-                            </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <p class="judul">Garudayana</p>
+                            </a>
+                        </div>
                     </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/bacaKomik.html">
+                                <p class="episode">Episode 19</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <p class="waktu">10 menit yang lalu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/dalang pelo77.jpg" alt="cover" sizes="20%">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <p class="judul">Dalang Pelo</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/bacaKomik.html">
+                                <p class="episode">Episode 17</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <p class="waktu">11 menit yang lalu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <img src="/public/img/dalang pelo77.jpg" alt="cover" sizes="20%">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/detailKomik.html">
+                                <p class="judul">Dalang Pelo</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <a href="/web/auth/bacaKomik.html">
+                                <p class="episode">Episode 17</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <p class="waktu">11 menit yang lalu</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
-            <div class="sidebar">
-                <div class="kanan1">
-                    <div class="isi-kanan1">
-                        <div class="atas">
-                            <p class="jud">Cari Menurut Genre</p>
-                        </div>
-                        <div class="is">
-                            <ul>
-                                <li><a href="">Aksi</a></li>
-                                <li><a href="">Drama</a></li>
-                                <li><a href="">Horor</a></li>
-                                <li><a href="">Komedi</a></li>
-                                <li><a href="">Petualangan</a></li>
-                            </ul>
-                            <ul id="banyak" style="display: none;">
-                                <li><a href="">Aksi</a></li>
-                                <li><a href="">Drama</a></li>
-                                <li><a href="">Horor</a></li>
-                                <li><a href="">Komedi</a></li>
-                                <li><a href="">Petualangan</a></li>
-                            </ul>
-                        </div>
+        <div class="sidebar">
+            <div class="kanan1">
+                <div class="isi-kanan1">
+                    <div class="atas">
+                        <p class="jud">Cari Menurut Genre</p>
                     </div>
-                    <div class="btn-banyak" onclick="show()">
-                        <a href="javascript:void(0)">Tampilkan lebih banyak</a>
-                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    <div class="is">
+                        <ul>
+                            <li><a href="">Aksi</a></li>
+                            <li><a href="">Drama</a></li>
+                            <li><a href="">Horor</a></li>
+                            <li><a href="">Komedi</a></li>
+                            <li><a href="">Petualangan</a></li>
+                        </ul>
+                        <ul id="banyak" style="display: none;">
+                            <li><a href="">Aksi</a></li>
+                            <li><a href="">Drama</a></li>
+                            <li><a href="">Horor</a></li>
+                            <li><a href="">Komedi</a></li>
+                            <li><a href="">Petualangan</a></li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="kanan2">
-                        <div class="atas">
-                                <div class="atas-kiri">
-                                    <p class="jud">Paling Populer</p>
-                                </div>
-                                <div class="atas-kanan">
-                                    <a href="/web/auth/terbaru.html">Lihat semua</a>
-                                </div>
-                            </div>
-                    <div isi2>
-                        <div class="kanan2-isi">
-                            <div class="num">1.</div>
-                            <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/si juki-keroyokan77.jpg" alt="cover" sizes="20%" >
-                                <div class="lol">
-                                    <p class="judul">Si Juki</p>
-                                    <p class="pengarang">Faza Meonk</p>
-                                    <p class="episode">Episode 179</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="kanan2-isi">
-                            <div class="num">2.</div>
-                            <a href="/web/auth/detailKomik.html">
-                                <img src="/public/img/si abi77.jpg" alt="cover" sizes="20%" >
-                                <div class="lol">
-                                    <p class="judul">Si Abi</p>
-                                    <p class="pengarang">Anone</p>
-                                    <p class="episode">Episode 222</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
+                <div class="btn-banyak" onclick="show()">
+                    <a href="javascript:void(0)">Tampilkan lebih banyak</a>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
                 </div>
             </div>
+
+            <div class="kanan2">
+                <div class="atas">
+                    <div class="atas-kiri">
+                        <p class="jud">Paling Populer</p>
+                    </div>
+                    <div class="atas-kanan">
+                        <a href="/web/auth/terbaru.html">Lihat semua</a>
+                    </div>
+                </div>
+                <div isi2>
+                    <div class="kanan2-isi">
+                        <div class="num">1.</div>
+                        <a href="/web/auth/detailKomik.html">
+                            <img src="/public/img/si juki-keroyokan77.jpg" alt="cover" sizes="20%">
+                            <div class="lol">
+                                <p class="judul">Si Juki</p>
+                                <p class="pengarang">Faza Meonk</p>
+                                <p class="episode">Episode 179</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="kanan2-isi">
+                        <div class="num">2.</div>
+                        <a href="/web/auth/detailKomik.html">
+                            <img src="/public/img/si abi77.jpg" alt="cover" sizes="20%">
+                            <div class="lol">
+                                <p class="judul">Si Abi</p>
+                                <p class="pengarang">Anone</p>
+                                <p class="episode">Episode 222</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
         <div class="clear"></div>
     </div>
     <!-- FOOTER -->
@@ -458,10 +484,10 @@
     </footer>
 
     <div id="loading">
-      <p></p>
+        <p></p>
     </div>
-    
-    <button id="dark-mode"style="cursor: pointer; border-radius: 50%; background:#ccc;width: 40px; height: 40px; position: fixed; bottom: 20px; right:20px;" type="button" name="dark_light" title="Toggle dark/light mode">🌛</button>
+
+    <button id="dark-mode" style="cursor: pointer; border-radius: 50%; background:#ccc;width: 40px; height: 40px; position: fixed; bottom: 20px; right:20px;" type="button" name="dark_light" title="Toggle dark/light mode">🌛</button>
 
     <script src="/public/js/jquery/jquery-3.4.1.min.js"></script>
     <script src="/public/js/loading.js"></script>
@@ -471,5 +497,7 @@
     <script src="/public/js/dark-mode.js"></script>
     <script src="/public/js/lebihBanyak.js"></script>
 
-  </body>
+</body>
+<script src="/public/js/firebase/home.js"></script>
+
 </html>
