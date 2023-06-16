@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="/public/css/masuk_daftar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--  Firebase  -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js "></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js "></script>
-    <script src="/public/js/firebase/config.js"></script>
+    <script src="/public/js/config/config.js"></script>
+    <!--  auth check  -->
     <title>BACA KOMIK</title>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -83,9 +84,9 @@
     <div class="konten masuk">
         <form id="loginForm">
             <h1>MASUK</h1>
-            <input type="email" name="email" id="myemail" placeholder="Email"><br>
-            <input type="password" name="password" id="mypass" placeholder="Kata sandi"><br>
-            <button type="">Masuk</button> <br>
+            <input type="email" name="email" id="email" placeholder="Email"><br>
+            <input type="password" name="password" id="password" placeholder="Kata sandi" autocomplete="true"><br>
+            <button type="submit">Masuk</button> <br>
             <a href="/web/unauth/daftar1.html"><u>Belum punya akun?</u></a>
         </form>
     </div>
@@ -110,7 +111,7 @@
     <script src="/public/js/loading.js"></script>
     <script src="/public/js/navbar.js"></script>
     <script src="/public/js/validasi_masuk.js"></script>
-    <script src="/public/js/firebase/login.js"></script>
+    <script src="/public/js/controller/auth/login.js"></script>
 </body>
 
 </html>

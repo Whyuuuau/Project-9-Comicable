@@ -72,40 +72,41 @@ function tambahKomik() {
     terbuka = "#tambah";
     tulisan = "selamat! Komik berhasil ditambahkan dan telah tersimpan dalam sistem.";
     $(".content > p").text(tulisan);
-    }
+}
 function verif() {
     $("#verif").fadeToggle();
     terbuka = "#verif";
     tulisan = "selamat! verifikasi berhasil dan telah tersimpan dalam sistem.";
     $(".content > p").text(tulisan);
-    }
+}
 function uang() {
     $("#uang").fadeToggle();
     terbuka = "#uang";
     tulisan = "selamat! topup berhasil, menunggu transfer.";
     $(".content > p").text(tulisan);
-    }
+}
 function profil() {
     $("#profil").fadeToggle();
     terbuka = "#profil";
     tulisan = "selamat! edit profil berhasil dan telah tersimpan.";
     $(".content > p").text(tulisan);
-    }
+}
 function keluarAkun() {
   $("#keluarAkun").fadeToggle();
     terbuka = "#keluarAkun";
-  }
+}
 function tutup() {
     $(terbuka).fadeToggle();
-    }
+}
 function signout(){
       window.location.href = "/web/unauth/index.html";
-    }
+}
 function verifikasi(){
   if(tengokIsi()){
     $('.content2').css('opacity', '1');
     $('.content2').css('visibility','visible');
   }else {
+      updateData();
     $('.content').css('opacity', '1');
     $('.content').css('visibility','visible');
   }

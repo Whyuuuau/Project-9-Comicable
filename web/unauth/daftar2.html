@@ -10,6 +10,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BACA KOMIK</title>
+    <!--  Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js "></script>
+    <script src="/public/js/config/config.js"></script>
+    <!--  Middleware  -->
+    <script src="/public/js/middleware/unauth.js"></script>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/public/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/img/favicon/favicon-32x32.png">
@@ -18,12 +26,6 @@
     <link rel="mask-icon" href="/public/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js "></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js "></script>
-    <script src="/public/js/firebase/config.js"></script>
 </head>
 
 <body>
@@ -69,8 +71,8 @@
     <div class="konten">
         <form id="submitForm">
             <h1>DAFTAR</h1><br>
-            <input onkeyup="validasi();" type="password" name="" placeholder="Masukkan kata sandi" id="pass"><br>
-            <input onkeyup="validasi2();" type="password" name="" id="pass2" placeholder="Konfirmasi kata sandi"><br>
+            <input onkeyup="validasi();" type="password" name="" placeholder="Masukkan kata sandi" id="pass" autocomplete="true"><br>
+            <input onkeyup="validasi2();" type="password" name="" id="pass2" placeholder="Konfirmasi kata sandi" autocomplete="true"><br>
             <p style="display:none;color:red;" id="samain">*konfirmasi password tidak sama</p>
             <p style="display:none;color:red;" id="panjangPendek">*password panjangnya harus 5 sampai 12 karakter</p>
             <p style="display:none;color:red;" id="kKecil">*password harus memiliki 1 karakter huruf kecil</p>
@@ -100,7 +102,7 @@
     <script src="/public/js/loading.js"></script>
     <script src="/public/js/validasi_daftar2.js" charset="utf-8"></script>
     <script src="/public/js/navbar.js"></script>
-    <!-- <script src="/public/js/firebase/register.js"></script> -->
+     <script src="/public/js/controller/auth/register.js"></script>
 </body>
 
 </html>
