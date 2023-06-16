@@ -33,19 +33,25 @@
     <nav class="topnav" id="myTopnav">
         <ul>
             <div class="kiri">
-                <li><a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a></li>
-                <li><a href="/web/auth/index.html" ><img class="logo" src="/public/img/BACA%20KOMIK%20ICON.png" alt=""></a></li>
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="bar()"> <i class="fa fa-bars"></i></a>
+                </li>
+                <li>
+                    <a href="/web/auth/index.html"><img class="logo" src="/public/img/BACA%20KOMIK%20ICON.png" alt=""></a>
+                </li>
                 <li><a class="respon" href="/web/auth/index.html" class="active">BERANDA</a> </li>
-                <li><a class="respon"href="/web/auth/semuaKomik.html">SEMUA KOMIK</a> </li>
+                <li><a class="respon" href="/web/auth/semuaKomik.html">SEMUA KOMIK</a> </li>
                 <li><a class="respon" href="/web/auth/terbaru.html">TERBARU</a></li>
             </div>
             <div class="kanan">
-                <li><a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a></li>
-                <i  style="margin-top:10px; color:#2095F2;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-caret-down" aria-hidden="true" style="color:#2095F2;" ></i>
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="find()"> <i class="fa fa-search" aria-hidden="true"></i> </a>
+                </li>
+                <i style="margin-top:10px; color:#2095F2;" class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-caret-down" aria-hidden="true" style="color:#2095F2;"></i>
                 <li> <input class="respon" type="text" placeholder="   Cari"> </li>
-                <ul id="dropdown"style="display:none">
-                    <li >
+                <ul id="dropdown" style="display:none">
+                    <li>
                         <a href="#" class="biru size18" id="user-email">
                             <script>
                                 let email = sessionStorage.getItem("UserEmail");
@@ -62,7 +68,7 @@
                         </a>
                     </li> <br>
                     <li class="garis" onclick="uang();">
-                        <a class="size14"  href="javascript:void(0);" id="user-balance">
+                        <a class="size14" href="javascript:void(0);" id="user-balance">
                             <script>
                                 let balance = sessionStorage.getItem("UserBalance");
                                 document.getElementById("user-balance").innerText = balance !== undefined ? "Rp. " + balance : "Rp. 0 (Topup Sekarang!)";
@@ -71,43 +77,43 @@
                         </a>
                     </li><br>
                     <li><a href="" style="color:black; cursor:default;">komik</a></li> <br>
-                    <li><a class="abu"href="/web/auth/komikSaya.html">komik saya</a></li> <br>
-                    <li><a class="abu"href="/web/auth/komikTerbeli.html">koleksi terbeli</a></li> <br>
-                    <li class="garis" onclick="tambahKomik();"><a href="javascript:void(0);" class="abu"  >tambah komik</a></li> <br>
+                    <li><a class="abu" href="/web/auth/komikSaya.html">komik saya</a></li> <br>
+                    <li><a class="abu" href="/web/auth/komikTerbeli.html">koleksi terbeli</a></li> <br>
+                    <li class="garis" onclick="tambahKomik();"><a href="javascript:void(0);" class="abu">tambah komik</a></li> <br>
                     <li class="garis" onclick="profil();"><a href="javascript:void(0);">Edit Profil</a></li> <br>
-                    <li  onclick="logout()"><a class="merah"href="javascript:void(0);">Logout</a></li>
+                    <li onclick="logout()"><a class="merah" href="javascript:void(0);">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
-            <div id="bar" style="display:none;"  class="bar">
+            <div id="bar" style="display:none;" class="bar">
                 <a class="respon" href="/web/auth/index.html" class="active">BERANDA</a>
-                <a class="respon"href="/web/auth/semuaKomik.html">SEMUA KOMIK</a>
+                <a class="respon" href="/web/auth/semuaKomik.html">SEMUA KOMIK</a>
                 <a class="respon" href="/web/auth/terbaru.html">TERBARU</a>
             </div>
-            <div id="find" style="display:none;"  class="bar">
+            <div id="find" style="display:none;" class="bar">
                 <input class="respon" type="text" placeholder="   Cari">
             </div>
         </ul>
     </nav>
 
     <!-- modal box -->
-    <div class="content" >
+    <div class="content">
         <div class="header">
             <!-- <p>Data Tersimpan</p> -->
             <label for="click" class="fas fa-times" onclick="closeverif();"></label>
         </div>
-        <label for="click" class="fas fa-check" ></label>
+        <label for="click" class="fas fa-check"></label>
         <p>selamat! Komik berhasil ditambahkan dan telah tersimpan.</p>
         <div class="line"></div>
         <label for="click" class="close-btn" onclick="closeverif();">Close</label>
     </div>
 
-    <div class="content2" >
+    <div class="content2">
         <div class="header2">
             <!-- <p>Data Tersimpan</p> -->
             <label for="click" class="fas fa-times" onclick="closeverif();"></label>
         </div>
-        <label id="kedua" for="click" class="fas fa-times" ></label>
+        <label id="kedua" for="click" class="fas fa-times"></label>
         <p> input masih ada yang kosong nih, isi dulu ya kak.</p>
         <div class="line"></div>
         <label for="click" class="close-btn2" onclick="closeverif();">Close</label>

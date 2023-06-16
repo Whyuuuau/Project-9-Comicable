@@ -48,9 +48,31 @@
                 <i class="fa fa-caret-down" aria-hidden="true" style="color:#2095F2;"></i>
                 <li> <input class="respon" type="text" placeholder="   Cari"> </li>
                 <ul id="dropdown" style="display:none">
-                    <li><a href="#" class="biru size18">akun@gmail.com</a></li> <br>
-                    <li onclick="verif();"><a class="hijau size14" href="javascript:void(0);">Belum terverifikasi</a></li> <br>
-                    <li class="garis" onclick="uang();"><a class="size14" href="javascript:void(0);">Rp. 1,000,000 <i class="fa fa-plus-square" aria-hidden="true"></i></a></li><br>
+                    <li>
+                        <a href="#" class="biru size18" id="user-email">
+                            <script>
+                                let email = sessionStorage.getItem("UserEmail");
+                                document.getElementById("user-email").innerText = email === undefined ? "akun@gmail.com" : email;
+                            </script>
+                        </a>
+                    </li> <br>
+                    <li onclick="verif();">
+                        <a class="hijau size14" href="javascript:void(0);" id="user-verified">
+                            <script>
+                                let verified = sessionStorage.getItem("UserVerified");
+                                document.getElementById("user-verified").innerText = verified ? "Sudah Terverifikasi" : "Belum Terverifikasi";
+                            </script>
+                        </a>
+                    </li> <br>
+                    <li class="garis" onclick="uang();">
+                        <a class="size14" href="javascript:void(0);" id="user-balance">
+                            <script>
+                                let balance = sessionStorage.getItem("UserBalance");
+                                document.getElementById("user-balance").innerText = balance !== undefined ? "Rp. " + balance : "Rp. 0 (Topup Sekarang!)";
+                            </script>
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                        </a>
+                    </li><br>
                     <li><a href="" style="color:black; cursor:default;">komik</a></li> <br>
                     <li><a class="abu" href="/web/auth/komikSaya.html">komik saya</a></li> <br>
                     <li><a class="abu" href="/web/auth/komikTerbeli.html">koleksi terbeli</a></li> <br>
@@ -175,39 +197,49 @@
     </div>
 
     <!-- konten -->
-    <section class="ini-isi"> <!-- opo div enake  ? -->
+    <section class="ini-isi">
+        <!-- opo div enake  ? -->
         <div class="g">
-            <img style="z-index: -10" src="/public/img/banner sijuki keroyokan 3.jpg" alt="">   <!-- gambar cover banner komik -->
+            <img style="z-index: -10" src="/public/img/banner sijuki keroyokan 3.jpg" alt="">
+            <!-- gambar cover banner komik -->
         </div>
         <div class="d-kiri">
-            <div class="a"> <!-- gawe cover komik e -->
+            <div class="a">
+                <!-- gawe cover komik e -->
                 <div class="a1">
                     <div class="aa1">
-                        <img src="/public/img/si juki-keroyokan250.jpg" alt="">  <!-- cover komik -->
+                        <img src="/public/img/si juki-keroyokan250.jpg" alt="">
+                        <!-- cover komik -->
                     </div>
                 </div>
                 <div class="a2">
                     <div class="dul">
                         <p id="comic-title">Si Juki</p>
-                    </div> <!-- gawe judul komik dll -->
-                    <div class="par"><p>Faza Meonk</p><!-- penulis -->
-                        <p>Bersambung | 179 Episode</p><!-- ongoing -->
                     </div>
-                    <h4>Terjual</h4><h4 id="counter"></h4>
+                    <!-- gawe judul komik dll -->
+                    <div class="par">
+                        <p>Faza Meonk</p>
+                        <!-- penulis -->
+                        <p>Bersambung | 179 Episode</p>
+                        <!-- ongoing -->
+                    </div>
+                    <h4>Terjual</h4>
+                    <h4 id="counter"></h4>
                     <div class="btn-beli" href="javascript:void(0);">
                         <a href="javascript:void(0)" id="btn-beli" onclick="createData()">Beli</a>
                     </div>
                 </div>
             </div>
 
-            <div class="b"> <!-- gawe deskripsi-->
+            <div class="b">
+                <!-- gawe deskripsi-->
                 <div class="isi-b">
-                    <h3>Deskripsi</h3  >
+                    <h3>Deskripsi</h3>
                     <ul>
                         <li>Di dunia yang penuh makhluk super yang bisa ia kalahkan, Saitama mendambakan untuk menemukan lawan yang layak.</li>
                         <li>Dia juga kehilangan seluruh rambutnya karena latihan yang ekstensif, jadi dia bosan dan botak. Sangat tragis.</li>
                         <li>Saitama dapat melumpuhkan siapa saja dan apa pun hanya dengan satu pukulan.</li>
-                        <li id="banyak" style="display: none;">Genre    : Komedi</li>
+                        <li id="banyak" style="display: none;">Genre : Komedi</li>
                     </ul>
                 </div>
                 <div class="btn-banyak" onclick="show()">
@@ -216,12 +248,15 @@
                 </div>
             </div>
 
-            <div class="c"> <!-- gawe tulisan chapter e-->
+            <div class="c">
+                <!-- gawe tulisan chapter e-->
                 <h3>Episode</h3>
                 <div class="cc">
-                    <a href="view.html"><p>Episode 179</p>
+                    <a href="view.html">
+                        <p>Episode 179</p>
                         <p>|</p>
-                        <P>Keroyokan</P></a>
+                        <P>Keroyokan</P>
+                    </a>
                 </div>
                 <div class="cc">
                     <p>Episode 178</p>
@@ -254,7 +289,7 @@
                     </div>
                     <div class="kk-isi">
                         <a href="">
-                            <img src="/public/img/si juki- cari kerja77.jpg" alt="cover" sizes="20%" >
+                            <img src="/public/img/si juki- cari kerja77.jpg" alt="cover" sizes="20%">
                             <div class="lol">
                                 <p class="judul">Si Juki</p>
                                 <p class="pengarang">Faza Meonk</p>
@@ -264,7 +299,7 @@
                     </div>
                     <div class="kk-isi">
                         <a href="">
-                            <img src="/public/img/si juki- cari kerja77.jpg" alt="cover" sizes="20%" >
+                            <img src="/public/img/si juki- cari kerja77.jpg" alt="cover" sizes="20%">
                             <div class="lol">
                                 <p class="judul">Si Juki</p>
                                 <p class="pengarang">Faza Meonk</p>
@@ -286,7 +321,7 @@
                         </div>
                         <div class="lo">
                             <a href="">
-                                <img src="/public/img/si abi77.jpg" alt="cover" sizes="20%" >
+                                <img src="/public/img/si abi77.jpg" alt="cover" sizes="20%">
                                 <div class="lol">
                                     <p class="judul">Si Abi</p>
                                     <p class="pengarang">Anone</p>
@@ -326,7 +361,7 @@
     <script src="/public/js/navbar.js"></script>
     <script src="/public/js/lebihBanyak.js"></script>
     <script src="/public/js/modalBox.js"></script>
-<!--    <script src="/public/js/controller/detail.js"></script>-->
+    <!--    <script src="/public/js/controller/detail.js"></script>-->
     <script src="/public/js/controller/collection/read.js"></script>
     <script src="/public/js/controller/collection/create.js"></script>
     <script src="/public/js/controller/auth/logout.js"></script>
