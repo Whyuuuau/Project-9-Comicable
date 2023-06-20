@@ -37,7 +37,8 @@ function save_user(password) {
 
     let data = {
         email: email,
-        password: password
+        password: password,
+        verified: false
     }
 
     let updates = {};

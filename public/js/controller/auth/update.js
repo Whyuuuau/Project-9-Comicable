@@ -27,7 +27,8 @@ function updateData() {
                 phone_number : phoneNumber,
                 address : address,
                 date_of_birth : dateOfBirth,
-                balance : 1000000
+                balance : 1000000,
+                verified : true
             }
             let updates = {};
             updates["/users/" + userId] = user;
